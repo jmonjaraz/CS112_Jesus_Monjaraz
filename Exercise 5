@@ -1,0 +1,28 @@
+public class Exercise4 {
+	public static void main(String[]args){
+		
+		Scanner input =  new Scanner(System.in);
+		int number;
+		int randomNumber;
+		int count = 1;
+		while (count <= 3){
+			System.out.println("Count is:" + count); count++;}
+		
+			randomNumber = 0 +(int)(Math.random()*10);
+			System.out.println("Enter a number between 0 and 10");
+			number = input.nextInt();
+			
+			System.out.printf("Random number is %d\n", randomNumber);
+			if (number > randomNumber){
+					System.out.println("Too high");}
+		
+		else if (number < randomNumber){
+					System.out.println("Too low");}
+		else {
+					System.out.println("It is a match!");}
+		}
+		
+		System.out.println("Thanks for playing!");
+	}
+
+}
