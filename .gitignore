@@ -1,0 +1,121 @@
+import java.util.Random;
+
+import java.util.Scanner;
+
+
+public class RockPS {
+
+public static void main(String[] args) {
+
+
+int SCISSOR = 0;
+int ROCK = 1;
+int PAPER = 2;
+
+Random random = new Random();
+
+
+int computerNumber = random.nextInt(3);
+
+Scanner input = new Scanner(System.in);
+
+System.out.println("Please enter a number 0,1 or 2.");
+
+int userNumber = input.nextInt();
+
+
+
+if (userNumber > 2) {
+
+System.out.println("Incorrect value entered");
+
+}
+
+
+System.out.println("Computer Value:" + computerNumber);
+
+ 
+
+if (userNumber == computerNumber) {
+
+System.out.println("Its a draw");
+
+return;
+
+}
+
+if (userNumber == SCISSOR) {
+
+
+
+if (computerNumber == PAPER) {
+
+
+
+System.out.println("User wins!");
+
+return;
+
+} else if (computerNumber == ROCK) {
+
+
+
+System.out.println("Computer wins!");
+
+return;
+
+}
+
+} else if (userNumber == ROCK) {
+
+ 
+
+if (computerNumber == PAPER) {
+
+
+System.out.println("Computer wins!");
+
+return;
+
+} else if (computerNumber == SCISSOR) {
+
+
+System.out.println("User wins!");
+
+return;
+
+}
+
+} else if (userNumber == PAPER) {
+
+
+
+if (computerNumber == SCISSOR) {
+
+
+
+System.out.println("Computer wins!");
+
+return;
+
+} else if (computerNumber == ROCK) {
+
+
+
+System.out.println("User wins!");
+
+return;
+
+}
+
+} else {
+
+System.out.println("User wins!");
+
+return;
+
+}
+
+}
+
+}
