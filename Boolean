@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Boolean {
+	public static void main (String [] args){
+		
+	Scanner scan = new Scanner(System.in);
+	
+	int random = (int)(Math.random()*10);
+	int answer;
+	boolean correct = false, greater;
+	
+	System.out.println("Please enter a number:");
+	answer = scan.nextInt();
+	
+	correct = (answer == random);
+	greater = (answer > random);
+	
+	if(correct){
+		System.out.println("Your answer is correct");
+	}
+	else if(greater){
+		System.out.println("Your answer is greater");}
+		else{
+			System.out.println("Your answer is not correct." + "Please try again");
+		}
+		
+	
+		
+	
+	}
+
+}
