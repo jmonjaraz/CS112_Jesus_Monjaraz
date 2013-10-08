@@ -1,0 +1,78 @@
+import java.util.Random;
+import java.util.Scanner;
+public class RockPaperScissors{
+	
+	public static void main (String[] args) {
+		
+		int Computer=0,Player=0,tie=0,computerAnswer,pscore;
+		String choice="y"; 
+		Random generate= new Random();
+		Scanner kbd= new Scanner(System.in);
+		while (choice.equals("y")) {
+			computerAnswer=generate.nextInt(3)+1;
+			System.out.println ("Enter 1 for Rock, 2 for Paper, and 3 for Scissors");
+			pscore=kbd.nextInt();
+			if (computerAnswer==pscore) {
+				System.out.println("Tie Game");
+				tie++; }
+			else {
+				switch (computerAnswer) {
+				case 1:{ 
+					if (computerAnswer==2){
+						System.out.println ("Paper beats Rock");
+						System.out.println("Computer chose " + computerAnswer + " and you chose " + pscore);
+						System.out.println ("Computer wins");
+						Computer++;}
+					else{ 
+						System.out.println ("Rock beats Scissors");
+						System.out.println("Computer chose " + computerAnswer+ " and you chose " + pscore);
+						System.out.println ("Player wins!");
+						Player++; }
+					break; }
+				case 2: {
+					if (computerAnswer==1) {
+						System.out.println ("Paper beats Rock");
+						System.out.println("Computer chose " + computerAnswer + " and you chose " + pscore);
+						System.out.println ("Player wins!");
+						Player++; }
+					else { 
+						System.out.println ("Scissors beat Paper");
+						System.out.println("Computer chose " + computerAnswer + " and you chose " + pscore);
+						System.out.println ("Computer wins!");
+						Computer++; }
+					break; }
+				case 3: {
+					if (computerAnswer==1) {
+						System.out.println ("Rock beats Scissors");
+						System.out.println("Computer chose " + computerAnswer + " and you chose " + pscore);
+						System.out.println ("Computer wins");
+						Computer++; }
+					else { 
+						System.out.println ("Scissors beat Paper");
+						System.out.println("Computer chose " + computerAnswer + " and you chose " + pscore);
+						System.out.println ("Player wins");
+						Player++; } 
+					break; }
+				default: {
+					System.out.println("Enter 1 2 or 3");
+					break; }
+}
+
+
+
+} 
+			Scanner kbd1 = new Scanner (System.in);
+			System.out.println ("Play again? y/n"); 
+			choice = kbd1.nextLine();
+
+
+			if(!(choice.equals("y"))) {
+				System.out.println ("Scores:");
+				System.out.println ("Ties= "+tie+" Wins= "+Player+" Losses= "+Computer); }
+			else { 
+				System.out.println ("playing again"); 
+}
+}
+
+}
+}
