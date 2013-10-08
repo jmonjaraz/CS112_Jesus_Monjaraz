@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Boolean {
+	public static void main (String [] args){
+		
+	Scanner scan = new Scanner(System.in);
+	
+	int random = (int)(Math.random()*10);
+	int answer ;
+	boolean correct = false, greater;
+	int tryCounter = 0;
+	
+	do{
+		System.out.println("Enter a number: press 30 if you wish to stop");
+		answer = scan.nextInt();
+		tryCounter = tryCounter + 1;
+		if(answer == 30){
+			System.out.print("You are done!");
+		break;}
+		
+		correct = (answer == random);
+		greater = (answer > random);
+		
+		if(correct){
+			System.out.println("Your answer is correct");
+			break;
+			}
+		
+		else if(greater){
+			System.out.println("Your answer is greater");
+			}
+			else{
+				System.out.println("Your answer is not correct." + "Please try again");
+				}	
+
+	}while(tryCounter < 10);
+
+	
+	
+	}
+}
