@@ -1,0 +1,83 @@
+import java.util.Random;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+public class RockPaperScissors{
+	
+	public static void main (String[] args) {
+		
+		int Computer=0,Player=0,tie=0,computerAnswer,pscore;
+		String choice="y"; 
+		Random generate= new Random();
+		Scanner kbd= new Scanner(System.in);
+		while (choice.equals("y")) {
+			computerAnswer=generate.nextInt(3)+1;
+			JOptionPane.showInputDialog(null, "Enter 1 for Rock, 2 for Paper, and 3 for Scissors");
+			pscore=kbd.nextInt();
+			if (computerAnswer==pscore) {
+				JOptionPane.showMessageDialog(null, "Tie Game");
+				tie++; }
+			else {
+				switch (computerAnswer) {
+				case 1:{ 
+					if (computerAnswer==2){
+						JOptionPane.showMessageDialog(null, "Paper beats Rock");
+						JOptionPane.showMessageDialog(null, "Computer chose " + computerAnswer + " and you chose " + pscore);
+						JOptionPane.showMessageDialog(null, "Computer wins");
+						Computer++;}
+					else{ 
+						JOptionPane.showMessageDialog(null, "Rock beats Scissors");
+						JOptionPane.showMessageDialog(null, "Computer chose " + computerAnswer+ " and you chose " + pscore);
+						JOptionPane.showMessageDialog(null, "Player wins!");
+						Player++; }
+					break;
+					 }
+				case 2: {
+					if (computerAnswer==1) {
+						JOptionPane.showMessageDialog(null, "Paper beats Rock");
+						JOptionPane.showMessageDialog(null, "Computer chose " + computerAnswer + " and you chose " + pscore);
+						JOptionPane.showMessageDialog(null, "Player wins!");
+						Player++; }
+					
+					else { 
+						JOptionPane.showMessageDialog (null, "Scissors beat Paper");
+						JOptionPane.showMessageDialog(null, "Computer chose " + computerAnswer + " and you chose " + pscore);
+						JOptionPane.showMessageDialog(null, "Computer wins!");
+						Computer++; }
+					break;
+					 }
+				case 3: {
+					if (computerAnswer==1) {
+						JOptionPane.showMessageDialog(null, "Rock beats Scissors");
+						JOptionPane.showMessageDialog(null, "Computer chose " + computerAnswer + " and you chose " + pscore);
+						JOptionPane.showMessageDialog(null, "Computer wins");
+						Computer++; }
+					else { 
+						JOptionPane.showMessageDialog(null, "Scissors beat Paper");
+						JOptionPane.showMessageDialog(null, "Computer chose " + computerAnswer + " and you chose " + pscore);
+						JOptionPane.showMessageDialog(null, "Player wins");
+						Player++; } 
+					break;
+					 }
+				default: {
+					JOptionPane.showInputDialog(null, "Enter 1 2 or 3");
+					break; }
+}
+
+
+
+} 
+			Scanner kbd1 = new Scanner (System.in);
+			JOptionPane.showInputDialog(null, "Play again? y/n"); 
+			choice = kbd1.nextLine();
+
+
+			if(!(choice.equals("y"))) {
+				JOptionPane.showMessageDialog(null, "Scores:");
+				JOptionPane.showMessageDialog(null, "Ties= "+tie+" Wins= "+Player+" Losses= "+Computer); }
+			else { 
+				JOptionPane.showMessageDialog(null, "playing again"); 
+}
+}
+
+}
+}
