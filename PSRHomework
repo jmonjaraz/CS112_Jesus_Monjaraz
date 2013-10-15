@@ -1,0 +1,148 @@
+import java.util.Scanner;
+
+public class PSR2{
+
+public static void main (String[]args){
+
+int Computer=0 , Player=0 , tie=0 , compic=0 , pscore=0 ; tie=0;
+
+int end = 0;
+
+int playerMovesNo = 0;
+
+int computerMovesNo = 0;
+
+int playerMoves[] = new int [100];
+
+int computerMoves[] = new int [100];
+
+int i = 0;
+
+Scanner scan = new Scanner(System.in);
+
+System.out.println("Enter 0 for Scissors, 1 for Rock, and 2 for Paper:");
+System.out.println("If you wish to stop please enter 3.");
+
+
+while (end < 3 || pscore == 3){
+
+pscore = scan.nextInt();
+
+compic = (int)(Math.random()*3);
+
+switch (pscore){
+
+case 0:
+
+if(compic == 0){
+
+System.out.println("Tie");
+
+tie++;}
+
+else if(compic == 1){
+
+System.out.println("Computer wins");
+
+Computer++;}
+
+else{
+
+System.out.println("Player wins");
+
+Player++;
+
+end++;
+
+}
+
+break;
+
+case 1:
+
+if(compic ==1){
+
+System.out.println("Tie");
+
+tie++;}
+
+else if(compic ==2){
+
+System.out.println("Computer wins");
+
+Computer++;}
+
+else{
+
+System.out.println("Player wins");
+
+Player++;
+
+end++;
+
+}
+
+break;
+
+case 2:
+
+if(compic ==2){
+
+System.out.println("Tie");
+
+tie++;}
+
+else if(compic ==2){
+
+System.out.println("Computer wins");
+
+Computer++;}
+
+else{
+
+System.out.println("Player wins");
+
+Player++;
+
+end++;
+
+}
+
+break;
+
+case 3:
+	if(pscore == 3){
+		System.out.print("Thank you for playing.");
+	}
+
+}
+
+playerMoves[playerMovesNo] = pscore;
+
+computerMoves[computerMovesNo] = compic;
+
+computerMovesNo++;
+
+playerMovesNo++;
+
+}
+
+System.out.println("");
+
+System.out.println("The player wins" + Player);
+
+System.out.println("The computer wins" + Computer);
+
+System.out.println("Tie : " + tie);
+
+for(i=0; i < end; i++){
+
+System.out.println("Player chose:" + playerMoves[i]);
+
+System.out.println("Computer chose:" + computerMoves[i]);
+
+}
+
+}
+
+}
